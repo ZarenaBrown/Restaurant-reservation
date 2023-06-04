@@ -7,12 +7,16 @@ import Layout from "./layout/Layout";
  * @returns {JSX.Element}
  */
 function App() {
+
   return (
+    <div className="app-routes">
     <Switch>
       <Route path="/">
         <Layout />
       </Route>
     </Switch>
+    </div>
+
   );
 }
 
