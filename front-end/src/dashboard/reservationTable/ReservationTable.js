@@ -23,7 +23,9 @@ function ReservationTable({
               return res;
             });
             setReservations(updated);
-            history.go(`/dashboard?date=${reservation.reservation_date}`);
+            if(status === "200") {
+                history.goBack();
+            } 
           } catch (error) {
             setError(error);
           }
