@@ -8,7 +8,7 @@ function TableList({ tables, loadDashboard }) {
 
   const formattedTables = tables.map((table) => (
     <TableInfo
-      key={table.table_id}
+      key={table.id}
       table={table}
       loadDashboard={loadDashboard}
     />
