@@ -28,7 +28,18 @@ function TableList({ tables, loadDashboard }) {
                 <th scope="col">Finish</th>
             </tr>
             </thead>
-            <tbody>{formatted}</tbody>
+            <tbody>
+                {tables.map((table) => {
+                return(
+                    <tr key={table.table_id}>
+                    <td>{table.table_name}</td>
+                    <td>{table.status}</td>
+                    <td>{table.capacity}</td>
+                    <td>{table.status === "occupied" ? <button data-table-id-finish={table.table_id} type="button" className="btn btn-primary" onClick={finishHandler} value={table.table_id}>Finish</button> : null}</td>
+                    </tr>
+                )
+                })}
+            </tbody>
         </table>
     );
 }
